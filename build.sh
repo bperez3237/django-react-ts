@@ -2,7 +2,6 @@
 # exit on error
 set -o errexit
 
-cd server
 
 poetry install
 
