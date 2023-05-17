@@ -1,0 +1,377 @@
+[
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "dj_database_url",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dj_database_url",
+        "description": "dj_database_url",
+        "detail": "dj_database_url",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "RenderConfig",
+        "kind": 6,
+        "importPath": "server.render.apps",
+        "description": "server.render.apps",
+        "peekOfCode": "class RenderConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'render'",
+        "detail": "server.render.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "server.render.urls",
+        "description": "server.render.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n]",
+        "detail": "server.render.urls",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "server.render.views",
+        "description": "server.render.views",
+        "peekOfCode": "def index(request):\n    return render(request, 'render/index.html', {})",
+        "detail": "server.render.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "server.server.asgi",
+        "description": "server.server.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "server.server.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", default=\"secret_key\")\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv('SECRET_KEY')\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv('SECRET_KEY')\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "SECRET_KEY = os.getenv('SECRET_KEY')\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "DEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "DEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "RENDER_EXTERNAL_HOSTNAME",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'render.apps.RenderConfig',\n]\nMIDDLEWARE = [",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "ROOT_URLCONF = 'server.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'server.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        dj_database_url.config(\n            default='postgresql://postgres:postgres@localhost:5432/mysite',\n            conn_max_age=600,\n            )\n    }",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        dj_database_url.config(\n            default='postgresql://postgres:postgres@localhost:5432/mysite',\n            conn_max_age=600,\n            )\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_L10N",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    # Turn on WhiteNoise storage backend that takes care of compressing static files",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    # Turn on WhiteNoise storage backend that takes care of compressing static files\n    # and creating unique names for each version so they can safely be cached forever.",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "STATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    # Turn on WhiteNoise storage backend that takes care of compressing static files\n    # and creating unique names for each version so they can safely be cached forever.\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "server.server.urls",
+        "description": "server.server.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('render.urls')),\n]",
+        "detail": "server.server.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "server.server.wsgi",
+        "description": "server.server.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "server.server.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "server.manage",
+        "description": "server.manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "server.manage",
+        "documentation": {}
+    }
+]

@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import dj_database_url
 
-# Load environment variables from .env file
-load_dotenv()
+SECRET_KEY = os.environ.get("SECRET_KEY", default="secret_key")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
