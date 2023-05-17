@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 # from dotenv import load_dotenv
 import dj_database_url
+import whitenoise
 
 SECRET_KEY = os.environ.get("SECRET_KEY", default="secret_key")
 

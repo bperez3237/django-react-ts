@@ -106,6 +106,15 @@
         "documentation": {}
     },
     {
+        "label": "whitenoise",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "whitenoise",
+        "description": "whitenoise",
+        "detail": "whitenoise",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
