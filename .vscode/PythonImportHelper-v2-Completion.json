@@ -262,7 +262,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'server.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        dj_database_url.config(\n            default='postgresql://postgres:postgres@localhost:5432/mysite',\n            conn_max_age=600,\n            )\n    }",
+        "peekOfCode": "WSGI_APPLICATION = 'server.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": \"mydatabase\",\n    }\n}\n# Password validation",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -271,7 +271,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        dj_database_url.config(\n            default='postgresql://postgres:postgres@localhost:5432/mysite',\n            conn_max_age=600,\n            )\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators",
+        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": \"mydatabase\",\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
         "detail": "server.server.settings",
         "documentation": {}
     },
