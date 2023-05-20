@@ -64,6 +64,22 @@
         "documentation": {}
     },
     {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -112,6 +128,14 @@
         "importPath": "whitenoise",
         "description": "whitenoise",
         "detail": "whitenoise",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "decouple",
+        "description": "decouple",
+        "isExtraImport": true,
+        "detail": "decouple",
         "documentation": {}
     },
     {
@@ -172,7 +196,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", default=\"secret_key\")\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv('SECRET_KEY')\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ",
+        "peekOfCode": "SECRET_KEY = config('SECRET_KEY')\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\n# SECRET_KEY = os.getenv('SECRET_KEY')\n# SECRET_KEY = os.environ.get(\"SECRET_KEY\")   \nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -181,16 +205,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv('SECRET_KEY')\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')",
-        "detail": "server.server.settings",
-        "documentation": {}
-    },
-    {
-        "label": "SECRET_KEY",
-        "kind": 5,
-        "importPath": "server.server.settings",
-        "description": "server.server.settings",
-        "peekOfCode": "SECRET_KEY = os.getenv('SECRET_KEY')\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\n# SECRET_KEY = os.getenv('SECRET_KEY')\n# SECRET_KEY = os.environ.get(\"SECRET_KEY\")   \nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = [\"127.0.0.1\", \"localhost\", \"192.168.0.12\"]",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -199,7 +214,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "DEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
+        "peekOfCode": "DEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = [\"127.0.0.1\", \"localhost\", \"192.168.0.12\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n    SECRET_KEY = os.environ.get(\"SECRET_KEY\")   \n# Application definition\nINSTALLED_APPS = [",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -208,7 +223,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "DEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "peekOfCode": "DEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = [\"127.0.0.1\", \"localhost\", \"192.168.0.12\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n    SECRET_KEY = os.environ.get(\"SECRET_KEY\")   \n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -217,7 +232,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "ALLOWED_HOSTS = [\"127.0.0.1\", \"localhost\", \"192.168.0.12\"]\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n    SECRET_KEY = os.environ.get(\"SECRET_KEY\")   \n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -226,7 +241,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "peekOfCode": "RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:    \n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n    SECRET_KEY = os.environ.get(\"SECRET_KEY\")   \n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -235,7 +250,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'render.apps.RenderConfig',\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'render.apps.RenderConfig',\n    'corsheaders',\n    'rest_framework',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -244,7 +259,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -253,7 +268,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "ROOT_URLCONF = 'server.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'server.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, \"build\")],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -262,7 +277,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, \"build\")],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -298,7 +313,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -307,7 +322,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)\n  os.path.join(BASE_DIR, \"build/static\"),",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -316,7 +331,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)\n  os.path.join(BASE_DIR, \"build/static\"),\n]",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -325,7 +340,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    # Turn on WhiteNoise storage backend that takes care of compressing static files",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)\n  os.path.join(BASE_DIR, \"build/static\"),\n]\n# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -334,7 +349,7 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    # Turn on WhiteNoise storage backend that takes care of compressing static files\n    # and creating unique names for each version so they can safely be cached forever.",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)\n  os.path.join(BASE_DIR, \"build/static\"),\n]\n# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -343,7 +358,25 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\n# Following settings only make sense on production and may break development environments.\nif not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory\n    # in your application directory on Render.\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    # Turn on WhiteNoise storage backend that takes care of compressing static files\n    # and creating unique names for each version so they can safely be cached forever.\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)\n  os.path.join(BASE_DIR, \"build/static\"),\n]\n# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n  # Tell Django where to look for React's static files (css, js)\n  os.path.join(BASE_DIR, \"build/static\"),\n]\n# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_STORAGE",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "STATICFILES_STORAGE = \"whitenoise.storage.CompressedManifestStaticFilesStorage\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\"  # Update with your React development server URL\n]",
         "detail": "server.server.settings",
         "documentation": {}
     },
@@ -352,8 +385,26 @@
         "kind": 5,
         "importPath": "server.server.settings",
         "description": "server.server.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\"  # Update with your React development server URL\n]",
         "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "server.server.settings",
+        "description": "server.server.settings",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\"  # Update with your React development server URL\n]",
+        "detail": "server.server.settings",
+        "documentation": {}
+    },
+    {
+        "label": "render_react",
+        "kind": 2,
+        "importPath": "server.server.urls",
+        "description": "server.server.urls",
+        "peekOfCode": "def render_react(request):\n    return render(request, \"index.html\")\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    re_path(r\"^$\", render_react),\n    re_path(r\"^(?:.*)/?$\", render_react),\n]",
+        "detail": "server.server.urls",
         "documentation": {}
     },
     {
@@ -361,7 +412,7 @@
         "kind": 5,
         "importPath": "server.server.urls",
         "description": "server.server.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('render.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    re_path(r\"^$\", render_react),\n    re_path(r\"^(?:.*)/?$\", render_react),\n]",
         "detail": "server.server.urls",
         "documentation": {}
     },
